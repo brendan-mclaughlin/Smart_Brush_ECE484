@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weekly Data</title>
+    <style>
+      /* Style each day's div */
+      .day {
+        display: inline-block;
+        border: 1px solid black;
+        padding: 10px;
+        margin-right: 10px;
+        background-color: lightgray;
+      }
+      
+      /* Style the label text */
+      .label {
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      /* Style the average and total divs */
+      #average, #total {
+        display: inline-block;
+        border: 1px solid black;
+        padding: 10px;
+        margin-right: 10px;
+        background-color: lightgray;
+      }
+      
+      /* Style the label text in the average and total divs */
+      #average .label, #total .label {
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="day" id="monday">
+      <div class="label">Monday</div>
+      <div class="data">Sample data: 10</div>
+    </div>
+    <div class="day" id="tuesday">
+      <div class="label">Tuesday</div>
+      <div class="data">Sample data: 12</div>
+    </div>
+    <div class="day" id="wednesday">
+      <div class="label">Wednesday</div>
+      <div class="data">Sample data: 8</div>
+    </div>
+    <div class="day" id="thursday">
+      <div class="label">Thursday</div>
+      <div class="data">Sample data: 14</div>
+    </div>
+    <div class="day" id="friday">
+      <div class="label">Friday</div>
+      <div class="data">Sample data: 9</div>
+    </div>
+    <div class="day" id="saturday">
+      <div class="label">Saturday</div>
+      <div class="data">Sample data: 11</div>
+    </div>
+    <div class="day" id="sunday">
+      <div class="label">Sunday</div>
+      <div class="data">Sample data: 7</div>
+    </div>
+    <br>
+    <div id="average">
+      <div class="label">Average</div>
+      <div class="data">Sample data: 7</div>
+    </div>
+    <div id="total">
+      <div class="label">Total</div>
+      <div class="data">Sample data: 7</div>
+    </div>
+  </body>
+</html>
