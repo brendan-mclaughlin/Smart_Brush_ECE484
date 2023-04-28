@@ -3,64 +3,68 @@
   <head>
     <title>Weekly Data</title>
     <style>
-      /* Style each day's div */
-      .day {
-        display: inline-block;
-        border: 1px solid black;
-        padding: 10px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        background-color: #ECECEC;
-      }
-      
-      /* Style the label text */
-      .label {
-        font-size: 10px;
-        font-weight: bold;
-        margin-bottom: 5px;
-        color: black;
-      }
-      
-      /* Style the average and total divs */
-      #average, #total {
-        display: inline-block;
-        border: 1px solid black;
-        padding: 10px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        background-color: #ECECEC;
-        vertical-align: top;
-        text-align: center;
-        width: 100px;
-      }
-      
-      /* Style the label text in the average and total divs */
-      #average .label, #total .label {
-        font-size: 10px;
-        font-weight: bold;
-        margin-bottom: 5px;
-        color: black;
-      }
-      
-      /* Center the average and total divs */
-      .container {
-        text-align: center;
-      }
-      
-      /* Set a fixed height for each row */
-      .row {
-        height: 130px;
-      }
-      
-      /* Allow the days of the week to wrap if the page isn't wide enough */
-	.days-of-week {
-  		display: flex;
-  		flex-wrap: wrap;
-  		justify-content: center;
-  		align-items: center;
-  		gap: 10px;
-  		margin: 0 auto;
-	}
+    /* Style each day's div */
+    .day {
+      display: inline-block;
+      border: 1px solid black;
+      padding: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      background-color: burlywood;
+      color: black;
+      height: 150px;
+    }
+
+    /* Style the label text */
+    .label {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    /* Style the average and total divs */
+    #average,
+    #total {
+      display: inline-block;
+      border: 1px solid black;
+      padding: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      background-color: #3b6978;
+      color: white;
+      vertical-align: top;
+      text-align: center;
+      width: 200px;
+      height: 150x;
+    }
+
+    /* Style the label text in the average and total divs */
+    #average .label,
+    #total .label {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    /* Center the average and total divs */
+    .container {
+      text-align: center;
+    }
+
+    /* Set a fixed height for each row */
+    .row {
+      height: 200px;
+    }
+
+    /* Allow the days of the week to wrap if the page isn't wide enough */
+    .days-of-week {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 0 auto;
+    }
     </style>
   </head>
   <body>
@@ -68,41 +72,52 @@
       <div class="container">
         <div class="day" id="monday">
           <div class="label">Monday</div>
-          <div class="data">Sample data: 10</div>
+          <div class="data">Times Brushed: 10</div>
+          <div class="data">Total Time: 12</div>
         </div>
         <div class="day" id="tuesday">
           <div class="label">Tuesday</div>
-          <div class="data">Sample data: 12</div>
+          <div class="data">Times Brushed: 12</div>
+          <div class="data">Total Time: 12</div>
         </div>
         <div class="day" id="wednesday">
           <div class="label">Wednesday</div>
-          <div class="data">Sample data: 8</div>
+          <div class="data">Times Brushed: 8</div>
+          <div class="data">Total Time: 12</div>
         </div>
         <div class="day" id="thursday">
           <div class="label">Thursday</div>
-          <div class="data">Sample data: 14</div>
+          <div class="data">Times Brushed: 14</div>
+          <div class="data">Total Time: 12</div>
         </div>
         <div class="day" id="friday">
           <div class="label">Friday</div>
-          <div class="data">Sample data: 9</div>
+          <div class="data">Times Brushed: 9</div>
+          <div class="data">Total Time: 12</div>
         </div>
         <div class="day" id="saturday">
           <div class="label">Saturday</div>
-          <div class="data">Sample data: 11</div>
+          <div class="data">Times Brushed: 11</div>
+          <div class="data">Total Time: 12</div>
         </div>
         <div class="day" id="sunday">
           <div class="label">Sunday</div>
-          <div class="data">Sample data: 7</div>
+          <div class="data">Times Brushed: 7</div>
+          <div class="data">Total Time: 12</div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="container">
         <div id="average">
-          <div class="label">Average</div>
+          <div class="label">Average (Weekly)</div>
+          <div class="data">Times Brushed: 7</div>
+          <div class="data">Avg Time: 12</div>
         </div>
         <div id="total">
-          <div class="label">Total</div>
+          <div class="label">Total (Weekly)</div>
+          <div class="data">Times Brushed: 7</div>
+          <div class="data">Total Time: 12</div>
         </div>
       </div>
     </div>
