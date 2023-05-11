@@ -46,8 +46,6 @@ blue.value = True
 time.sleep(.1)
 blue.value = False
 
-stats = open("stats.csv", "a+")
-
 # Setup I2C accelerometer
 i2c = busio.I2C(sda = board.GP4, scl = board.GP5)
 accelerometer = adafruit_adxl34x.ADXL343(i2c)
@@ -82,10 +80,9 @@ except Exception as error:
 server = HTTPServer(pool)
 
 def update_stats():
-    global stats
-    stats.seek(0)
-    totals = [0 for i in range(8)]
-    averages = [0 for i in range(8)]
+    stats = open("stats.csv", "r")
+    totals = [0 for i in range(0,8)]
+    averages = [0 for i in range(0,8)]
     total = 0
     average = 0
     
@@ -139,10 +136,11 @@ def update_stats():
             total += 1
             average += int(data[1])
             
-    for i in range(0, 7):
+    for i in range(0, 8):
         averages[i] = averages[i] / totals[i]
             
     average = average / total
+    stats.close()
         
     return totals, averages, total, average
             
@@ -197,14 +195,14 @@ def webpage():
             <td>Offline Brushes</td>
           </tr>
           <tr style="background-color:lightgrey;">
-            <td>{total}</td>
             <td>{average}</td>
-            <td>Total: {totals[8]}</td>
+            <td>{total}</td>
+            <td>Total: {totals[7]}</td>
           </tr>
           <tr style="background-color:lightgrey;">
             <td></td>
             <td></td>
-            <td>Average: {averages[8]}</td>
+            <td>Average: {averages[7]}</td>
           </tr>
         </table>
       </body>
@@ -262,7 +260,7 @@ red.value = True
 accelerometer.enable_tap_detection(tap_count=2)
 
 while not accelerometer.events["tap"]:
-    pass
+    server.poll()
 
 accelerometer.disable_tap_detection()
 accelerometer.enable_motion_detection()
@@ -312,8 +310,8 @@ while True:
             end_time = time.time() - start_time
             brushing_session = False
             print("Didn't Brush Hard Enough")
-            stats.write("{},{}\n".format(day_of_week, end_time))
-            stats.flush()
+            with open("stats.csv", "a") as stats:
+                stats.write("{},{}\n".format(day_of_week, end_time))
         
         if (time.time() - start_time) > 120 and brushing_session:
             green.value = False
@@ -322,8 +320,8 @@ while True:
             end_time = 120
             brushing_session = False
             print("Done Brushing!")
-            stats.write("{},{}\n".format(day_of_week, end_time))
-            stats.flush()
+            with open("stats.csv", "a") as stats:
+                stats.write("{},{}\n".format(day_of_week, end_time))
             
         server.poll()
     # pylint: disable=broad-except
